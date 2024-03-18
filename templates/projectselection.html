@@ -1,0 +1,143 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Selection</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 20px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        select, input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #4caf50;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+    <script>
+        function updateSubProjectDropdown() {
+            var projectDropdown = document.getElementById("project");
+            var subProjectDropdown = document.getElementById("subProject");
+
+            var selectedProject = projectDropdown.value;
+
+            // Clear existing options
+            subProjectDropdown.innerHTML = "";
+
+            // Add new options based on the selected project
+            if (selectedProject === "bharti") {
+                addOption(subProjectDropdown, "rotn", "ROTN");
+                addOption(subProjectDropdown, "upwest", "UP WEST");
+                addOption(subProjectDropdown, "rajsthan", "RAJASTHAN");
+                addOption(subProjectDropdown, "Karnatak", "KARNATAK");
+                addOption(subProjectDropdown, "Ap", "AP");
+                addOption(subProjectDropdown, "Pune", "Pune");
+                addOption(subProjectDropdown, "Mumbai", "Mumbai");
+                // Add more cities here if needed
+
+            } else if (selectedProject === "jio") {
+                addOption(subProjectDropdown, "mp", "MP");
+                addOption(subProjectDropdown, "upe", "UPE");
+                addOption(subProjectDropdown, "Rob", "ROB");
+                addOption(subProjectDropdown, "Kol", "KOL");
+                addOption(subProjectDropdown, "Maharshtra", "MAHARASHTRA");
+                addOption(subProjectDropdown, "Mumbai", "MUMBAI");
+                addOption(subProjectDropdown, "Rajasthan", "RAJASTHAN");
+                addOption(subProjectDropdown, "Punjab", "PUNJAB");
+                addOption(subProjectDropdown, "Gujarat", "GUJARAT");
+                addOption(subProjectDropdown, "Hr", "HR");
+                addOption(subProjectDropdown, "Hp", "HP");
+                // Add more cities here if needed
+            }
+        }
+
+        function addOption(selectElement, value, text) {
+            var option = document.createElement("option");
+            option.value = value;
+            option.text = text;
+            selectElement.add(option);
+        }
+
+        // Call updateSubProjectDropdown() when the page is loaded
+        window.onload = updateSubProjectDropdown;
+    </script>
+</head>
+<body>
+
+<h1>Project Selection</h1>
+
+<form action="/taskallocation" method="post">
+
+
+
+    <label for="selectProject"> Select Project</label>
+    <select id="selectProject" name="selectProject">
+        <option value="empl1">Ericsson 5G Rollout</option>
+        <option value="empl2">Ericsson 4G Rollout</option>
+        <option value="empl3">Ericsson 4G cluster</option>
+        <option value="empl4">Ericsson Airtel5G_cluster</option>
+        <!-- <option value="empl5">Empl5</option> -->
+    </select>
+
+    <br>
+
+    <label for="project"> Select Circle</label>
+    <select id="project" name="project" onchange="updateSubProjectDropdown()">
+        <option value="AP">Andhra pradesh</option>
+        <option value="MH">Maharashtra</option>
+        <!-- Add more circles here if needed -->
+    </select>
+
+    <br>
+
+    <label for="subProject"> Select City</label>
+    <select id="subProject" name="subProject">
+        <option value="Pune">Pune</option>
+        <option value="Mumbai">Mumbai</option>
+        <!-- Add other cities here -->
+    </select>
+
+    <br>
+
+    <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>

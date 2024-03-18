@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Availability Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin: 50px;
+    }
+
+    h1{position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    color: white;
+    background-color: #2ECC71;
+    padding: 20px;
+    border-radius: 10px 10px 0 0; /* Rounded corners only at the top */
+    border: 4px solid #27AE60; /* Border style, adjust as needed */
+    border-bottom: none;
+    }
+
+    h2 {
+      margin-top: 20%;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin: 10px;
+      cursor: pointer;
+      border-radius: 20px; /* Adjust this value for the desired roundness */
+    }
+
+    #yesBtn {
+      background-color: #2ECC71;
+      color: white;
+      border: none;
+      width: 10%;
+      margin-right: 10%;
+    }
+
+    #noBtn {
+      background-color: #2ECC71;
+      color: white;
+      width: 10%;
+      border: none;
+      margin-top: 10%;
+    }
+  </style>
+</head>
+<body>
+  <h1>Availability</h1>
+
+  <h2>Are you available today?</h2>
+  <button id="yesBtn" onclick="alert('Great! Please proceed with the task.')">Yes</button>
+  <button id="noBtn" onclick="alert('No worries! Feel free to choose another time.')">No</button>
+</body>
+</html>

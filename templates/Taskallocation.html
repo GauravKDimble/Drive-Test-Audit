@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Task Allocation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        table {
+            width: 90%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #4caf50;
+            color: #fff;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Employee List - Task Allocation</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>Sr. No.</th>
+            <th>Employee Name</th>
+            <th>Circle</th>
+            <th>Task</th>
+            <th>Site Code</th>
+            <th>Latitude</th>
+            <th>Longitude</th>
+            <th>Allocated Date</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>Employee 1</td>
+            <td>Bharti</td>
+            <td>Task 1</td>
+            <td>ABC123</td>
+            <td>28.7041</td>
+            <td>77.1025</td>
+            <td>2024-02-24</td>
+            <td><button onclick="checkTask('Employee 1')">Check</button>
+                <button onclick="editTask('Employee 1')">Edit</button>
+                <button onclick="allocateTask('Employee 1')">Allocate</button></td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Employee 2</td>
+            <td>Jio</td>
+            <td>Task 2</td>
+            <td>XYZ456</td>
+            <td>19.0760</td>
+            <td>72.8777</td>
+            <td>2024-02-24</td>
+            <td><button onclick="checkTask('Employee 2')">Check</button>
+                <button onclick="editTask('Employee 2')">Edit</button>
+                <button onclick="allocateTask('Employee 2')">Allocate</button></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>Employee 3</td>
+            <td>Bharti</td>
+            <td>Task 3</td>
+            <td>PQR789</td>
+            <td>32.7266</td>
+            <td>74.8570</td>
+            <td>2024-02-24</td>
+            <td>
+            <button onclick="checkTask('Employee 3')">Check</button>
+                <button onclick="editTask('Employee 3')">Edit</button>
+                <button onclick="allocateTask('Employee 3')">Allocate</button>
+            </td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>Employee 4</td>
+            <td>Jio</td>
+            <td>Task 4</td>
+            <td>MNO123</td>
+            <td>22.5726</td>
+            <td>88.3639</td>
+            <td>2024-02-24</td>
+            <td><button onclick="checkTask('Employee 4')">Check</button>
+                <button onclick="editTask('Employee 4')">Edit</button>
+                <button onclick="allocateTask('Employee 4')">Allocate</button></td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td>Employee 5</td>
+            <td>Bharti</td>
+            <td>Task 5</td>
+            <td>LMN456</td>
+            <td>12.9716</td>
+            <td>77.5946</td>
+            <td>2024-02-24</td>
+            <td><button onclick="checkTask('Employee 5')">Check</button>
+                <button onclick="editTask('Employee 5')">Edit</button>
+                <button onclick="allocateTask('Employee 5')">Allocate</button></td>
+        </tr>
+    </tbody>
+</table>
+
+<script>
+    function allocateTask(employeeName) {
+        alert('Task allocated for ' + employeeName);
+        // You can add more functionality for task allocation here.
+    }
+    function editTask(employeeName) {
+        alert('Editing task for ' + employeeName);
+        // Add functionality for editing task here.
+    }
+
+    function allocateTask(employeeName) {
+        alert('Task allocated for ' + employeeName);
+        // Add functionality for allocating task here.
+    }
+</script>
+
+</body>
+</html>
