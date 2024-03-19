@@ -91,7 +91,7 @@ def login():
 
             if check_password_hash(user_data['password'], password):  # Verify password
                 if user_data.get('isAdmin', True):  # Check if user is an admin
-                    return render_template('projectselection.html')
+                    return render_template('welcomeadmin.html')
                 else:
                     return render_template('userreques.html')
             else:
@@ -106,6 +106,8 @@ def login():
             flash("An unexpected error occurred. Please try again.")
 
     return render_template('login.html')
+
+
 @app.route("/taskallocation", methods=['GET', 'POST'])
 def task_allocation():
     if request.method == 'POST':
@@ -117,14 +119,28 @@ def task_allocation():
     # Render the task allocation page template for GET requests
     return render_template('Taskallocation.html')
 
+
+@app.route("/Projectselection")
+def Project_selection():
+    if request.method == 'POST':
+        return redirect(url_for('Project_selection'))
+    return render_template('projectselection.html')
+
+@app.route("/taskStatus")
+def task_Status():
+    if request.method == 'POST':
+        return redirect(url_for('task_Status'))
+    return render_template('TaskStatus.html')
+
+@app.route("/downloadreport")
+def download_report():
+    if request.method == 'POST':
+        return redirect(url_for('download_report'))
+    return render_template('DownloadReport.html')
+
 @app.route("/userrequests")
 def user_requests():
     return render_template('userreques.html')
-
-
-
-
-
 
 
 if __name__ == '__main__':
